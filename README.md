@@ -23,13 +23,20 @@ WP-BRUTE-PRO is a professional WordPress password testing tool designed for auth
 
 ### Why Another Tool?
 
-| Tool | XML-RPC Multicall | Smart Wordlist | Proxy Rotation | Ban Evasion | Interactive UI | Resume |
-|------|:-:|:-:|:-:|:-:|:-:|:-:|
-| WPScan | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ |
-| Hydra | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ |
-| **WP-BRUTE-PRO** | **✔** | **✔** | **✔** | **✔** | **✔** | **✔** |
+| Feature | WPScan | Hydra | WP-BRUTE-PRO |
+|---------|--------|-------|--------------|
+| XML-RPC Multicall | ✗ | ✗ | **✔** (50 pwd/req) |
+| Smart Wordlist Generation | ✗ | ✗ | **✔** (5-layer) |
+| Proxy Support | ✔ (manual) | ✔ (manual) | **✔** (auto rotation) |
+| Throttle/Delay | ✔ (manual) | ✗ | **✔** (adaptive) |
+| Resume | ✗ | ✗ | **✔** |
+| Interactive UI | ✗ | ✗ | **✔** |
+| CVE/Vulnerability Scan | **✔** (API) | ✗ | ✗ |
+| Plugin/Theme Detection | **✔** (aggressive) | ✗ | Basic |
 
-WPScan and Hydra test passwords one-by-one. WP-BRUTE-PRO uses XML-RPC `system.multicall` to test **50 passwords in a single HTTP request**, making it significantly faster while appearing as a single request in server logs.
+> **Note:** WPScan is a vulnerability scanner, WP-BRUTE-PRO is a password tester. They complement each other — use WPScan for CVE detection and WP-BRUTE-PRO for password testing.
+
+WPScan and Hydra test passwords one-by-one via wp-login.php. WP-BRUTE-PRO uses XML-RPC `system.multicall` to test **50 passwords in a single HTTP request**, making it significantly faster while appearing as a single request in server logs.
 
 ### Features
 
@@ -294,13 +301,20 @@ WP-BRUTE-PRO, yetkili penetrasyon testleri ve güvenlik araştırmaları için t
 
 ### Neden Bu Araç?
 
-| Araç | XML-RPC Multicall | Akıllı Wordlist | Proxy Rotasyon | Ban Kaçınma | Etkileşimli UI | Devam |
-|------|:-:|:-:|:-:|:-:|:-:|:-:|
-| WPScan | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ |
-| Hydra | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ |
-| **WP-BRUTE-PRO** | **✔** | **✔** | **✔** | **✔** | **✔** | **✔** |
+| Özellik | WPScan | Hydra | WP-BRUTE-PRO |
+|---------|--------|-------|--------------|
+| XML-RPC Multicall | ✗ | ✗ | **✔** (50 şifre/istek) |
+| Akıllı Wordlist Üretimi | ✗ | ✗ | **✔** (5 katman) |
+| Proxy Desteği | ✔ (manuel) | ✔ (manuel) | **✔** (otomatik rotasyon) |
+| Hız Kontrolü | ✔ (manuel) | ✗ | **✔** (adaptif) |
+| Devam (Resume) | ✗ | ✗ | **✔** |
+| Etkileşimli UI | ✗ | ✗ | **✔** |
+| CVE/Zafiyet Tarama | **✔** (API ile) | ✗ | ✗ |
+| Eklenti/Tema Tespiti | **✔** (agresif) | ✗ | Temel |
 
-WPScan ve Hydra şifreleri teker teker dener. WP-BRUTE-PRO, XML-RPC `system.multicall` ile **tek HTTP isteğinde 50 şifre** test eder. Sunucu loglarında tek istek olarak görünürken çok daha hızlı çalışır.
+> **Not:** WPScan bir zafiyet tarayıcısı, WP-BRUTE-PRO bir şifre test aracıdır. Birbirini tamamlarlar — CVE tespiti için WPScan, şifre testi için WP-BRUTE-PRO kullanın.
+
+WPScan ve Hydra şifreleri wp-login.php üzerinden teker teker dener. WP-BRUTE-PRO, XML-RPC `system.multicall` ile **tek HTTP isteğinde 50 şifre** test eder. Sunucu loglarında tek istek olarak görünürken çok daha hızlı çalışır.
 
 ### Özellikler
 
