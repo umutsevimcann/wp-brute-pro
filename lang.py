@@ -150,6 +150,28 @@ STRINGS = {
         "report_title": "WordPress Brute Force Report",
         "report_date": "Date",
 
+        # Ctrl+C / Shutdown
+        "interrupted": "Interrupted by user (Ctrl+C)",
+        "state_saved": "Progress saved. Use --resume to continue.",
+        "report_saved": "Report saved.",
+        "resume_hint": "Run again with --resume to continue from where you left off.",
+
+        # ETA
+        "total_time": "Total time",
+
+        # Dry run
+        "dry_run_header": "DRY RUN — WORDLIST ONLY",
+        "dry_run_saved": "Wordlist saved to",
+
+        # Max passwords
+        "max_passwords": "Max passwords (0=unlimited)",
+        "stat_max": "Max limit",
+        "stat_unlimited": "unlimited",
+
+        # Found behavior
+        "found_skip": "Skipping remaining users",
+        "stop_on_found": "Stop after first password found?",
+
         # Misc
         "scan_start": "Scanning target...",
     },
@@ -300,6 +322,28 @@ STRINGS = {
         "report_time": "Zaman",
         "report_title": "WordPress Brute Force Raporu",
         "report_date": "Tarih",
+
+        # Ctrl+C / Shutdown
+        "interrupted": "Kullanıcı tarafından durduruldu (Ctrl+C)",
+        "state_saved": "İlerleme kaydedildi. Devam etmek için --resume kullanın.",
+        "report_saved": "Rapor kaydedildi.",
+        "resume_hint": "Kaldığınız yerden devam etmek için --resume ile tekrar çalıştırın.",
+
+        # ETA
+        "total_time": "Toplam süre",
+
+        # Dry run
+        "dry_run_header": "DRY RUN — SADECE WORDLIST",
+        "dry_run_saved": "Wordlist kaydedildi",
+
+        # Max passwords
+        "max_passwords": "Maksimum şifre (0=sınırsız)",
+        "stat_max": "Maks limit",
+        "stat_unlimited": "sınırsız",
+
+        # Found behavior
+        "found_skip": "Kalan kullanıcılar atlanıyor",
+        "stop_on_found": "İlk şifre bulununca dur?",
 
         # Misc
         "scan_start": "Hedef taranıyor...",

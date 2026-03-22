@@ -31,6 +31,13 @@ class Colors:
 C = Colors
 
 
+def disable_colors():
+    """Disable all ANSI colors for piping/file output"""
+    for attr in dir(C):
+        if not attr.startswith('_') and attr not in ('CLEAR_LINE', 'CURSOR_UP', 'CURSOR_HIDE', 'CURSOR_SHOW'):
+            setattr(C, attr, "")
+
+
 def term_width():
     return shutil.get_terminal_size().columns
 
@@ -83,7 +90,7 @@ def found_password(username, password):
     print(f"{C.RESET}\n")
 
 
-def batch_result(batch_num, total_batches, tried, total, status="miss"):
+def batch_result(batch_num, total_batches, tried, total, status="miss", eta=""):
     pct = tried / total if total > 0 else 0
     filled = int(30 * pct)
     bar = f"{C.GREEN}{'█' * filled}{C.GRAY}{'░' * (30 - filled)}{C.RESET}"
@@ -95,11 +102,12 @@ def batch_result(batch_num, total_batches, tried, total, status="miss"):
         "blocked": f"{C.MAGENTA}⊘{C.RESET}",
     }
     sym = symbols.get(status, f"{C.GRAY}·{C.RESET}")
+    eta_str = f" {C.YELLOW}ETA:{eta}{C.RESET}" if eta else ""
 
     line = (f"\r  {sym} {bar} "
             f"{C.WHITE}{tried:>6}{C.GRAY}/{total}{C.RESET} "
             f"{C.GRAY}B{batch_num}/{total_batches}{C.RESET} "
-            f"{C.CYAN}{pct:.0%}{C.RESET}  ")
+            f"{C.CYAN}{pct:.0%}{C.RESET}{eta_str}  ")
     sys.stdout.write(line)
     sys.stdout.flush()
 
