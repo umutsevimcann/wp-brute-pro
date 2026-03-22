@@ -70,11 +70,12 @@ def interactive_mode():
 
     # Language selection
     lang_idx = ui.select_menu(t("lang_select"), [
-        t("lang_en"),
-        t("lang_tr"),
+        "English", "Türkçe", "Deutsch", "Español", "Français",
+        "Russkij", "Zhongwen", "Português", "Nihongo", "Arabiya",
     ], default=0)
-    if lang_idx == 1:
-        set_lang("tr")
+    lang_codes = ["en", "tr", "de", "es", "fr", "ru", "zh", "pt", "ja", "ar"]
+    if lang_idx > 0:
+        set_lang(lang_codes[lang_idx])
 
     ui.header(t("config"))
 
@@ -183,7 +184,7 @@ def parse_args():
     p.add_argument("--config", help="JSON config file")
     p.add_argument("--resume", action="store_true")
     p.add_argument("--no-scan", action="store_true")
-    p.add_argument("--lang", default="en", choices=["en", "tr"])
+    p.add_argument("--lang", default="en", choices=["en", "tr", "de", "es", "fr", "ru", "zh", "pt", "ja", "ar"])
     p.add_argument("--max-passwords", type=int, default=0, help="Max passwords to try (0=unlimited)")
     p.add_argument("--dry-run", action="store_true", help="Generate wordlist only, don't attack")
     p.add_argument("--no-color", action="store_true", help="Disable colored output")
